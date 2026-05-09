@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fbf3e7;
+  --foreground: #2a1711;
+  --cream: #fff9ef;
+  --milk: #f7ead8;
+  --cocoa: #2a1711;
+  --mocha: #70513e;
+  --gold: #c89a5a;
+  --rose: #d8a29a;
+  --sage: #9aa58c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(216, 162, 154, 0.28), transparent 32rem),
+    radial-gradient(circle at 80% 10%, rgba(200, 154, 90, 0.2), transparent 28rem),
+    linear-gradient(180deg, #fff9ef 0%, #fbf3e7 42%, #f7ead8 100%);
+  color: var(--foreground);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: rgba(200, 154, 90, 0.35);
+}
+
+.font-display {
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.glass {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 249, 239, 0.58);
+  box-shadow: 0 24px 80px rgba(82, 49, 31, 0.12);
+  backdrop-filter: blur(22px);
+}
+
+.glow-button {
+  position: relative;
+  isolation: isolate;
+}
+
+.glow-button::before {
+  position: absolute;
+  inset: -8px;
+  z-index: -1;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(200, 154, 90, 0.45), transparent 70%);
+  content: "";
+  opacity: 0.75;
+  filter: blur(10px);
+}
+
+.masonry {
+  columns: 1;
+  column-gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .masonry {
+    columns: 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .masonry {
+    columns: 3;
+  }
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 1rem;
+}
